@@ -4,10 +4,9 @@
 .calendar {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: flex-start;
   max-width: $maxWidth;
-  margin: 0 auto;
+  margin: auto;
 
   @for $i from 1 through 31 {
     div:nth-child(#{$i}) {
@@ -35,23 +34,11 @@
   }
 }
 
-$days: (".calendar-mon": 0,
-".calendar-tue": 1,
-".calendar-wed": 2,
-".calendar-thu": 3,
-".calendar-fri": 4,
-".calendar-sat": 5,
-".calendar-sun": 6);
-
 @each $day, $number in $days {
   #{$day} div:first-child {
     margin-left: $number * 102px + 1;
   }
 }
-
-$dateth: (".calendar-28": 29,
-".calendar-29": 30,
-".calendar-30": 31);
 
 @each $date, $numDate in $dateth {
   #{$date} div:nth-child(n+#{$numDate}) {

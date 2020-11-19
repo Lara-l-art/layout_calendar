@@ -1,2 +1,13 @@
 $colorBlock: #eee;
 $maxWidth: 8*100px;
+$days: (".calendar-mon": 0,
+".calendar-tue": 1,
+".calendar-wed": 2,
+".calendar-thu": 3,
+".calendar-fri": 4,
+".calendar-sat": 5,
+".calendar-sun": 6);
+
+$dateth: (".calendar-28": 29,
+".calendar-29": 30,
+".calendar-30": 31);
