@@ -1,3 +1,71 @@
-body {
-  margin: 0;
+@import "variables";
+@import "normalize";
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: $maxWidth;
+  margin: 0 auto;
+
+  @for $i from 1 through 31 {
+    div:nth-child(#{$i}) {
+      background-color: $colorBlock;
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+      margin: 1px;
+    }
+  }
+
+  div:hover {
+    cursor: pointer;
+    animation: move-up-block 0.5s;
+  }
+}
+
+@for $a from 1 through 31 {
+  .calendar div:nth-child(#{$a})::after {
+    content: "#{$a}";
+    display: flex;
+    font-size: 30px;
+    line-height: 100px;
+    justify-content: center;
+  }
+}
+
+$days: (".calendar-mon": 0,
+".calendar-tue": 1,
+".calendar-wed": 2,
+".calendar-thu": 3,
+".calendar-fri": 4,
+".calendar-sat": 5,
+".calendar-sun": 6);
+
+@each $day, $number in $days {
+  #{$day} div:first-child {
+    margin-left: $number * 102px + 1;
+  }
+}
+
+$dateth: (".calendar-28": 29,
+".calendar-29": 30,
+".calendar-30": 31);
+
+@each $date, $numDate in $dateth {
+  #{$date} div:nth-child(n+#{$numDate}) {
+    display: none;
+  }
+}
+
+@keyframes move-up-block {
+  from {
+    background-color: $colorBlock;
+  }
+
+  to {
+    background-color: pink;
+    transform: translate(0, -20px);
+  }
 }
