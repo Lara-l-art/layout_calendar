@@ -1,5 +1,3 @@
-@import "variables";
-
 @for $a from 1 through 31 {
   .calendar > :nth-child(#{$a})::after {
     content: "#{$a}";
