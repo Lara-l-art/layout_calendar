@@ -1,13 +1,13 @@
 .calendar {
   display: flex;
   flex-wrap: wrap;
+  gap: 1px;
   justify-content: flex-start;
   margin: auto;
   max-width: $maxWidth;
 
   @for $i from 1 through 31 {
     > :nth-child(#{$i}) {
-      margin: 0.5px;
       height: 100px;
       width: 100px;
       background-color: $colorBlock;

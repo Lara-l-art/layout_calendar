@@ -12,7 +12,7 @@
 
 @each $day, $number in $days {
   #{$day} div:first-child {
-    margin-left: $number * 101px + 0.5px;
+    margin-left: $number * 101px;
   }
 }
 
