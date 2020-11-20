@@ -1,0 +1,23 @@
+@import "variables";
+
+@for $a from 1 through 31 {
+  .calendar > :nth-child(#{$a})::after {
+    content: "#{$a}";
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    line-height: 100px;
+  }
+}
+
+@each $day, $number in $days {
+  #{$day} div:first-child {
+    margin-left: $number * 101px + 0.5px;
+  }
+}
+
+@each $date, $numDate in $dateth {
+  #{$date} div:nth-child(n+#{$numDate}) {
+    display: none;
+  }
+}
