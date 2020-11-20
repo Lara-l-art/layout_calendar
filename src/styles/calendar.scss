@@ -6,18 +6,17 @@
   margin: auto;
   max-width: $maxWidth;
 
-  @for $i from 1 through 31 {
-    > :nth-child(#{$i}) {
-      height: 100px;
-      width: 100px;
-      background-color: $colorBlock;
-      border: 1px solid black;
-    }
-  }
-
   * {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    line-height: $blockHeight;
+    height: $blockHeight;
+    width: 100px;
+    background-color: $colorBlock;
+    border: 1px solid black;
     transform: translateY(0);
-    transition: all 0.5s;
+    transition: transform 0.5s;
   }
 
   > :hover {
@@ -25,5 +24,6 @@
     animation: move-up-block;
     transform: translateY(-20px);
     cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s;
   }
 }
