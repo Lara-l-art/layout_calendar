@@ -10,8 +10,10 @@
   }
 }
 
-@each $date, $numDate in $dateth {
-  #{$date} div:nth-child(n+#{$numDate}) {
-    display: none;
+.calendar- {
+  @for $i from 28 through 31 {
+    &#{$i} > :nth-child(n+#{$i+1}) {
+      display: none;
+    }
   }
 }
